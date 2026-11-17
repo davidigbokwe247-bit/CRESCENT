@@ -269,6 +269,86 @@ main {
     padding: 22px 20px 24px;
 }
 
+.gallery {
+    padding: 88px 6%;
+    background: var(--navy-900);
+}
+
+.gallery-heading {
+    max-width: 720px;
+    margin: 0 auto 34px;
+    text-align: center;
+}
+
+.gallery-heading h2 {
+    margin-bottom: 10px;
+    color: var(--white);
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    font-weight: 800;
+    font-style: italic;
+}
+
+.gallery-heading > p:last-child {
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 1.04rem;
+    font-style: italic;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-auto-rows: 220px;
+    gap: 18px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    min-width: 0;
+    border: 1px solid rgba(243, 217, 138, 0.3);
+    border-radius: 16px;
+    background: var(--navy-800);
+}
+
+.gallery-item-tall {
+    grid-row: span 2;
+}
+
+.gallery-item-wide {
+    grid-column: span 2;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.45s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.04);
+}
+
+.gallery-item figcaption {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 36px 18px 16px;
+    color: var(--white);
+    font-weight: 700;
+    font-style: italic;
+    background: linear-gradient(transparent, rgba(5, 16, 29, 0.88));
+}
+
+.gallery-note {
+    max-width: 900px;
+    margin: 20px auto 0;
+    color: rgba(255, 255, 255, 0.65);
+    text-align: center;
+    font-size: 0.85rem;
+}
+
 .feature {
     display: flex;
     align-items: center;
@@ -498,6 +578,11 @@ main {
         grid-template-columns: 1fr;
     }
 
+    .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-auto-rows: 200px;
+    }
+
     .feature {
         flex-direction: column;
     }
@@ -532,6 +617,19 @@ main {
     .btn {
         width: 100%;
         max-width: 280px;
+    }
+
+    .gallery-grid {
+        grid-auto-rows: 170px;
+        gap: 12px;
+    }
+
+    .gallery-item-tall {
+        grid-row: span 1;
+    }
+
+    .gallery-item-wide {
+        grid-column: span 1;
     }
 }
 
